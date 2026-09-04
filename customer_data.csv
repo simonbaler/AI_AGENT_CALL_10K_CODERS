@@ -1,0 +1,27 @@
+timestamp,event,call_sid,name,age,college,phone,language,status,duration
+2026-09-03T22:49:05,call_started,CAdf1b8ed844b1c81dc530222485df679b,Simon Raj,21,,+919392867166,te-IN,initiated,
+2026-09-03T23:00:09,call_completed,UNKNOWN,,,,,,completed,
+2026-09-03T23:01:59,call_completed,CHECK-FLOW-2,,,,,,completed,
+2026-09-03T23:02:52,call_completed,ISOLATE,,,,,,completed,
+2026-09-03T23:03:50,call_completed,FINAL-VOICE,,,,,,completed,42
+2026-09-03T23:04:25,call_completed,HEADER-CHECK,,,,,,completed,37
+2026-09-03T23:05:54,call_started,CA30cf97f7deda1105530f5b88e1b587d6,Raj Kumar,21,,+919392867166,en-IN,initiated,
+2026-09-03T23:12:40,call_started,CA2f6c7aa788ea18ca548f38130b47b249,Raj Kumar,21,,+919392867166,en-IN,initiated,
+2026-09-03T23:12:40,call_completed,CA2f6c7aa788ea18ca548f38130b47b249,Raj Kumar,21,,+919392867166,en-IN,initiated,0
+2026-09-03T23:12:41,call_completed,CA2f6c7aa788ea18ca548f38130b47b249,Raj Kumar,21,,+919392867166,en-IN,ringing,0
+2026-09-03T23:12:46,call_completed,CA2f6c7aa788ea18ca548f38130b47b249,Raj Kumar,21,,+919392867166,en-IN,in-progress,0
+2026-09-03T23:16:00,call_completed,CA2f6c7aa788ea18ca548f38130b47b249,Raj Kumar,21,,+919392867166,en-IN,completed,194
+2026-09-03T23:50:44,call_started,CA1b4f1cf7f23bac157bfaf3aa3c9e2ecb,Raj Kumar,21,siddhartha institute,+919392867166,en-IN,initiated,
+2026-09-03T23:50:44,call_completed,CA1b4f1cf7f23bac157bfaf3aa3c9e2ecb,Raj Kumar,21,siddhartha institute,+919392867166,en-IN,initiated,0
+2026-09-03T23:50:46,call_completed,CA1b4f1cf7f23bac157bfaf3aa3c9e2ecb,Raj Kumar,21,siddhartha institute,+919392867166,en-IN,ringing,0
+2026-09-03T23:50:52,call_completed,CA1b4f1cf7f23bac157bfaf3aa3c9e2ecb,Raj Kumar,21,siddhartha institute,+919392867166,en-IN,in-progress,0
+2026-09-03T23:54:28,call_completed,CA1b4f1cf7f23bac157bfaf3aa3c9e2ecb,Raj Kumar,21,siddhartha institute,+919392867166,en-IN,completed,216
+2026-09-04T00:06:38,call_started,CAa518b7fb1aa19a42447f15cae7311d8e,Simon Baler,21,siddhartha institute,+919392867166,en-IN,initiated,
+2026-09-04T00:06:38,call_completed,CAa518b7fb1aa19a42447f15cae7311d8e,Simon Baler,21,siddhartha institute,+919392867166,en-IN,initiated,0
+2026-09-04T00:06:39,call_completed,CAa518b7fb1aa19a42447f15cae7311d8e,Simon Baler,21,siddhartha institute,+919392867166,en-IN,ringing,0
+2026-09-04T00:06:43,call_completed,CAa518b7fb1aa19a42447f15cae7311d8e,Simon Baler,21,siddhartha institute,+919392867166,en-IN,in-progress,0
+2026-09-04T00:11:16,call_completed,CAa518b7fb1aa19a42447f15cae7311d8e,Simon Baler,21,siddhartha institute,+919392867166,en-IN,completed,274
+2026-09-04T00:17:40,call_started,CA10057ec8b13fef71d18b9ad85786fb65,Raj Kumar,21,siddhartha institute,+919392867166,en-IN,initiated,
+2026-09-04T00:17:40,call_completed,CA10057ec8b13fef71d18b9ad85786fb65,Raj Kumar,21,siddhartha institute,+919392867166,en-IN,initiated,0
+2026-09-04T00:17:42,call_completed,CA10057ec8b13fef71d18b9ad85786fb65,Raj Kumar,21,siddhartha institute,+919392867166,en-IN,ringing,0
+2026-09-04T00:17:45,call_completed,CA10057ec8b13fef71d18b9ad85786fb65,Raj Kumar,21,siddhartha institute,+919392867166,en-IN,in-progress,0

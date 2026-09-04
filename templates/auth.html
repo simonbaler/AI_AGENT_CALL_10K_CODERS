@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>10,000 Coders | Join the community</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-orb orb-main"><span>1K</span><small>CODERS</small></div><div class="auth-orb orb-small">+</div>
+  <main class="auth-shell">
+    <nav class="auth-nav"><a class="brand" href="/"><span class="brand-mark">10K</span><span><strong>10,000</strong> CODERS</span></a><a class="back-link" href="/">Back to home ↗</a></nav>
+    <section class="auth-layout">
+      <div class="auth-story"><p class="eyebrow">THE NEXT MOVE IS YOURS</p><h1>Turn curiosity<br>into <em>career.</em></h1><p>Join a community learning to build with AI, ship real products and show up ready for the opportunities ahead.</p><div class="auth-stat"><strong>01</strong><span>personalized voice connect<br>with our learning desk</span></div></div>
+      <form class="auth-card" method="post" action="/auth"><div class="auth-tabs"><button type="button" class="auth-tab active" data-mode="register">Register</button><button type="button" class="auth-tab" data-mode="login">Login</button></div><input type="hidden" name="mode" id="mode" value="register"><p class="eyebrow" id="authEyebrow">CREATE YOUR PROFILE</p><h2 id="authTitle">Welcome to the build room.</h2><label class="auth-field" id="nameField"><span>Full name</span><input name="name" placeholder="Your name" required></label><label class="auth-field"><span>Email address</span><input name="email" type="email" placeholder="you@example.com" required></label><label class="auth-field" id="passwordField"><span>Password</span><input name="password" type="password" placeholder="At least 6 characters" minlength="6" required></label><button class="auth-submit" type="submit"><span id="submitLabel">Create my profile</span> <b>↗</b></button><small class="auth-note">By continuing, you agree to receive updates about courses and career programs.</small></form>
+    </section>
+  </main>
+  <script>
+    const tabs = document.querySelectorAll('.auth-tab'); const mode = document.querySelector('#mode'); const title = document.querySelector('#authTitle'); const eyebrow = document.querySelector('#authEyebrow'); const submit = document.querySelector('#submitLabel'); const nameField = document.querySelector('#nameField');
+    tabs.forEach(tab => tab.addEventListener('click', () => { const login = tab.dataset.mode === 'login'; tabs.forEach(item => item.classList.toggle('active', item === tab)); mode.value = login ? 'login' : 'register'; eyebrow.textContent = login ? 'WELCOME BACK' : 'CREATE YOUR PROFILE'; title.textContent = login ? 'Good to see you again.' : 'Welcome to the build room.'; submit.textContent = login ? 'Enter dashboard' : 'Create my profile'; nameField.hidden = login; nameField.querySelector('input').required = !login; }));
+  </script>
+</body>
+</html>

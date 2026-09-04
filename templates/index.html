@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>10,000 Coders | AI Call Console</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <div class="ambient ambient-left"></div>
+    <div class="ambient ambient-right"></div>
+    <main class="console-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="sidebar-brand" href="/dashboard"><span class="brand-mark">10K</span><strong>10,000<br>CODERS</strong></a>
+        <p class="sidebar-label">WORKSPACE</p>
+        <nav class="side-nav"><a class="side-link active" href="#callForm"><span>◉</span>New call</a><a class="side-link" href="#logSection"><span>≡</span>Call activity</a><a class="side-link" href="#coursesSection"><span>◇</span>Selected courses</a><a class="side-link" href="#agentSection"><span>✦</span>Agent operations</a></nav>
+        <div class="sidebar-bottom"><div class="sidebar-tip"><span>✦</span><strong>Agent ready</strong><small>Workspace is live</small></div><a class="logout-link" href="/logout"><span>↪</span>Log out</a></div>
+      </aside>
+      <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Open navigation">☰</button>
+      <div class="workspace">
+      <header class="topbar">
+        <a class="brand" href="/dashboard" aria-label="10,000 Coders home"><span class="brand-mark">10K</span><span><strong>10,000</strong> CODERS</span></a>
+        <div class="live-pill"><span class="live-dot"></span> HI, {{ user.name|upper }} / AI VOICE DESK</div>
+      </header>
+      <section class="agent-bar" id="agentSection">
+        <div><p class="eyebrow">AGENT OPERATIONS</p><strong>Autonomous outreach</strong><span id="agentState">Ready to assist</span></div>
+        <label class="switch-label" for="automationToggle"><span>Automate tasks</span><input id="automationToggle" type="checkbox"><i class="switch"></i></label>
+        <label class="upload-button" for="customerFile">Import customer CSV <input id="customerFile" type="file" accept=".csv,text/csv"></label>
+        <button class="refresh-button" id="refreshLogs" type="button" title="Refresh call logs">↻</button>
+      </section>
+      <section class="hero-grid">
+        <div class="intro">
+          <p class="eyebrow">DIRECT CONNECTION / 01</p>
+          <h1>Build your next<br><em>breakthrough.</em></h1>
+          <p class="lede">A mentor is ready to speak with you about your coding journey, in the language that feels most natural.</p>
+          <div class="signal-line"><span></span><span></span><span></span><span></span><span></span><small>VOICE CHANNEL READY</small></div>
+        </div>
+        <div class="orbit-stage" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="core"><span>1K</span><small>CODERS</small></div><div class="satellite satellite-one">AI</div><div class="satellite satellite-two">+</div></div>
+        <form class="call-panel" id="callForm">
+          <div class="panel-heading"><div><p class="eyebrow">START A CONVERSATION</p><h2>Let's connect</h2></div><span class="step-count">01 <i>/ 03</i></span></div>
+          <div class="field"><label for="name">Customer name</label><input id="name" name="name" autocomplete="name" placeholder="Enter customer name" required /></div>
+          <div class="field"><label for="age">Customer age</label><input id="age" name="age" type="number" min="13" max="100" placeholder="Enter customer age" required /></div>
+          <div class="field"><label for="college">Customer college</label><input id="college" name="college" placeholder="Enter college or university" required /></div>
+          <div class="field"><label for="phone">Customer mobile number</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" required /></div>
+          <div class="field"><label for="language">Comfortable language</label><select id="language" name="language"><option value="en-IN">English</option><option value="hi-IN">Hindi</option><option value="te-IN">Telugu</option><option value="ta-IN">Tamil</option><option value="kn-IN">Kannada</option></select></div>
+          <button id="callBtn" class="primary" type="submit"><span class="button-icon">&#9742;</span> Press to call</button>
+          <div class="status-row"><span class="status-light"></span><span id="status" class="status">Ready when you are</span></div>
+          <div class="connecting" id="connecting" aria-hidden="true"><div class="dot"></div><div class="dot"></div><div class="dot"></div><span>Opening your voice channel...</span></div>
+          <p class="hint">Your details are used only to start this call.</p>
+        </form>
+      </section>
+      <section class="logs-section" id="logSection">
+        <div class="logs-heading"><div><p class="eyebrow">LIVE ACTIVITY / 02</p><h2>Call intelligence</h2></div><span id="logSummary">{{ call_logs|length }} records</span></div>
+        <div class="logs-table-wrap"><table><thead><tr><th>Customer</th><th>Contact</th><th>Language</th><th>Status</th><th>Talk time</th><th>When</th></tr></thead><tbody id="logRows">{% for log in call_logs %}<tr><td><strong>{{ log.name or 'Unknown customer' }}</strong><small>{{ log.age or '--' }} years</small></td><td>{{ log.phone or '--' }}</td><td>{{ log.language or '--' }}</td><td><span class="log-status">{{ log.status or log.event }}</span></td><td>{{ log.duration or '--' }} sec</td><td>{{ log.timestamp or '--' }}</td></tr>{% else %}<tr><td colspan="6" class="empty-logs">No call activity yet. Your next conversation will appear here.</td></tr>{% endfor %}</tbody></table></div>
+      </section>
+      <section class="courses-section" id="coursesSection">
+        <div class="courses-heading"><div><p class="eyebrow">CUSTOMER JOURNEY / 03</p><h2>Customer selected courses</h2></div><button id="coursesToggle" class="outline-button" type="button" aria-expanded="false">Show booked sessions <span>+</span></button></div>
+        <div id="coursesPanel" class="courses-panel" hidden><div class="course-filters" role="group" aria-label="Filter booked courses"><button class="course-filter active" data-filter="all" type="button">All roles</button><button class="course-filter" data-filter="python" type="button">Python</button><button class="course-filter" data-filter="java" type="button">Java</button></div><div class="journey-stats"><span><b id="bookingCount">0</b> booked demos</span><span><b id="pythonCount">0</b> Python</span><span><b id="javaCount">0</b> Java</span></div><div id="courseCards" class="course-cards"><p class="empty-logs">Loading booked demo sessions...</p></div></div>
+      </section>
+      <section class="assistant-section" id="assistantSection"><div class="assistant-heading"><div><p class="eyebrow">COPILOT / 04</p><h2>Ask your call assistant</h2></div><span class="assistant-online"><i></i> READY</span></div><div class="assistant-shell"><div class="assistant-suggestions"><button type="button" data-question="Which course has the best placement support?">Best placement track</button><button type="button" data-question="What are the fees and demo options?">Fees & demo options</button><button type="button" data-question="How many calls are in my activity?">Summarize activity</button></div><div class="chat-messages" id="chatMessages"><div class="chat-message agent-message"><span class="chat-avatar">✦</span><p>I’m your 10,000 Coders workspace assistant. Ask me about courses, fees, placements or today’s call activity.</p></div></div><form class="chat-form" id="chatForm"><input id="chatInput" placeholder="Ask a question about your workspace..." autocomplete="off" required><button type="submit" aria-label="Send message">↗</button></form></div></section>
+      <footer><span>10,000 CODERS</span><span>LEARN / BUILD / LAUNCH</span><span>SECURE VOICE CONNECTION</span></footer>
+      </div>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
